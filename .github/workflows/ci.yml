@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - master
+  pull_request:
+    branches:
+      - master
+
+jobs:
+  build:
+    name: Build
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
+    runs-on: macos-latest
+    steps:
+      - name: Current date
+        id: date
+        run: echo "::set-output name=date::$(date +'%Y%m%d')"
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install dependencies
+        run: brew install gcc@9 boost mbedtls ninja meson glfw glm
+      - name: Build
+        run: make -j$(sysctl -n hw.logicalcpu)
+      - name: Run
+        run: make -j$(sysctl -n hw.logicalcpu) run
+      - name: Upload
+        uses: actions/upload-artifact@v2
+        with:
+          name: ${{ github.event.repository.name }}-${{ steps.date.outputs.date }}
+          path: out/${{ github.event.repository.name }}

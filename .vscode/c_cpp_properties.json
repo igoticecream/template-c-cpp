@@ -1,0 +1,30 @@
+{
+    "env": {},
+    "configurations": [
+        {
+            "name": "Mac",
+            "includePath": [
+                "/usr/local/include",
+                "/usr/local/include/c++",
+                "${workspaceFolder}/include"
+            ],
+            "defines": [
+                "DEBUG",
+                "ENABLE_LOGGING"
+            ],
+            "compilerPath": "/usr/local/bin/g++-9",
+            "cStandard": "c18",
+            "cppStandard": "c++20",
+            "intelliSenseMode": "gcc-x64",
+            "browse": {
+                "databaseFilename": "",
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "${workspaceRoot}"
+                ]
+            },
+            "macFrameworkPath": []
+        }
+    ],
+    "version": 4
+}

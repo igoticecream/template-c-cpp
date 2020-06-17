@@ -1,0 +1,62 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "shell": {
+            "executable": "/bin/zsh",
+            "args": [
+                "-c"
+            ]
+        },
+        "env": {},
+        "cwd": "${workspaceFolder}"
+    },
+    "presentation": {
+        "clear": true,
+        "echo": false,
+        "reveal": "always",
+        "revealProblems": "onProblem",
+        "focus": true,
+        "panel": "shared",
+        "showReuseMessage": true
+    },
+    "problemMatcher": [],
+    "tasks": [
+        {
+            "label": "make",
+            "type": "shell",
+            "command": "make -j4",
+            "group": {
+                "isDefault": true,
+                "kind": "build"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "presentation": {
+                "reveal": "silent",
+                "focus": false,
+                "showReuseMessage": false
+            }
+        },
+        {
+            "label": "make run",
+            "type": "shell",
+            "command": "make -j4 run",
+            "group": "none",
+            "dependsOn": [
+                "make"
+            ]
+        },
+        {
+            "label": "make clean",
+            "type": "shell",
+            "command": "make -j4 clean",
+            "group": "none",
+            "presentation": {
+                "reveal": "silent",
+                "focus": false,
+                "showReuseMessage": false
+            }
+        }
+    ]
+}

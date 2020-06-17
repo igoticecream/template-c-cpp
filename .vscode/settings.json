@@ -1,0 +1,28 @@
+{
+    "files.associations": {
+        "*.h": "c",
+        "*.c": "c",
+        "*.hpp": "cpp",
+        "*.cpp": "cpp",
+    },
+    "files.exclude": {
+        "**/build": true,
+        "**/out": true,
+    },
+    "search.exclude": {
+        "**/build": true,
+        "**/out": true,
+    },
+    "code-runner.executorMapByGlob": {
+        "*": "make -C $workspaceRoot -j4 run"
+    },
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "C_Cpp.autoAddFileAssociations": false,
+    "C_Cpp.intelliSenseEngine": "Default",
+    "C_Cpp.clang_format_style": "file",
+    "C_Cpp.clang_format_fallbackStyle": "Visual Studio",
+    "C_Cpp.default.cStandard": "c18",
+    "C_Cpp.default.cppStandard": "c++20",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+}
